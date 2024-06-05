@@ -1,0 +1,58 @@
+.btn-menu {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .btn-menu {
+    display: flex;
+    align-items: center;
+    background: #222;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    cursor: pointer;
+    margin: 12px;
+    position: relative;
+    z-index: 200;
+  }
+
+  .btn-menu::before {
+    content: "";
+    display: inline-block;
+    height: 2px;
+    width: 12px;
+    background: #fff;
+    box-shadow: 0 4px #fff, 0 -4px #fff;
+    margin-right: 5px;
+    transition: transform 0.5s;
+  }
+
+  .btn-menu.ativa::before {
+    transform: rotate(90deg);
+  }
+
+  .grid-body .menu .menu-lista {
+    display: none;
+    position: absolute;
+    background: #fb5;
+    z-index: 100;
+    width: 160px;
+    padding: 60px 0 20px;
+    top: 0;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .grid-body .menu .menu-lista.ativa {
+    display: block;
+    animation: show-right .5s forwards;
+  }
+
+  .grid-body .menu .menu-lista .dropdow-menu {
+    position: static;
+    border: none;
+  }
+
+}

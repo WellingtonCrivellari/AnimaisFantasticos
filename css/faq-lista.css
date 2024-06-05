@@ -1,0 +1,54 @@
+.faq-lista{
+    grid-column: 2/4;
+}
+
+.faq-lista dt{
+    font-family: monospace;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+    color: #E54;
+    cursor: pointer;
+}
+
+.faq-lista dt::before{
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 10px;
+    margin-right:10px;
+    background: #FB5;
+}
+
+.faq-lista dt::after{
+    content: '⬎';
+    margin-left: 15px;
+}
+
+.faq-lista dt.ativo::after{
+    content: '⬏';
+    margin-left: 15px;
+}
+
+.faq-lista dd{
+    font-family: arial;
+    margin-bottom: .5rem;
+    margin-left: 30px;
+    display: none;
+}
+
+.faq-lista dd.ativo{
+    display: block;
+    animation: animaDD .5s forwards;
+}
+
+@keyframes animaDD{
+    from{
+        opacity: 0;
+        max-height: 0;
+    }
+    to{
+        max-height: 250px;
+        opacity: 1;
+    }
+}
